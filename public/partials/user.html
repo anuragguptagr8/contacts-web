@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row vspacer40">
+        <div class="col col-md-12">
+            <button data-ng-click="logout()" class="btn btn-success pull-right">Logout</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-md-8 col-centered">
+            <h3 class="text-center">Welcome {{user.fullName}}</h3>
+            <p class="text-center">Below is a list of all your contacts</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="row">
+            <div class="col col-md-12">
+                <p class="text-center" data-ng-class="{'text-danger': status.error, 'text-success': status.success}" data-ng-if="status.error || status.success">{{status.message}}</p>
+            </div>
+        </div>
+        <div class="col col-md-8 col-centered">
+            <div>
+
+                <button type="button" ng-click="addContact()" class="btn btn-sm btn-success">
+                    <i class="glyphicon glyphicon-plus">
+                    </i> Add Contact
+                </button>
+
+                <table st-table="contacts" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Full name</th>
+                        <th>Email</th>
+                        <th>Mobile</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="contact in contacts">
+                        <td>{{contact.fullName}}</td>
+                        <td>{{contact.email}}</td>
+                        <td>{{contact.mobile}}</td>
+                        <td>
+                            <a href="" data-ng-click="removeContact(contact)">Delete</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
