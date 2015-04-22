@@ -10,4 +10,4 @@ To run the application, install dependencies
 
 
 # Configuration
-Configure the backend API PATH in app.js constant named BASE_URL
+Configure the backend API PATH in public/app.js constant named BASE_URL
